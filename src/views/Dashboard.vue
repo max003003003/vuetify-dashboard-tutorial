@@ -2,7 +2,17 @@
   <div class="dashboard">
   <h1 class="subheading grey--text">Dashboard</h1>
 <v-container my-5>
+    <v-layout row class="mb-3">
+        <v-btn small depressed flat color="light-grey" @click="sortBy(`title`)">
+         <v-icon left small>folder</v-icon>
+         <span class="caption text-lowercase">By project name</span>
+        </v-btn>
+         <v-btn small depressed flat color="light-grey" @click="sortBy(`person`)" >
+         <v-icon left small>person</v-icon>
+         <span class="caption text-lowercase">By person</span>
+        </v-btn>
 
+    </v-layout>
        <v-card flat v-for="project in projects" :key="project.title">
          <v-layout row wrap :class="`pa-6 project ${project.status}`">
            <v-flex xs12 md6>
@@ -59,6 +69,11 @@ export default {
         { title: 'Re navigation to destination', person: 'Omahiln', due: '24th May 2019', status: 'overdue', content: 'Lorem voluptate incididunt cupidatat occaecat exercitation. Ex voluptate qui exercitation cupidatat voluptate labore. Ex esse voluptate quis aliqua aliqua commodo esse deserunt est et. Ad adipisicing nulla veniam labore in incididunt dolor Lorem velit ullamco ullamco. Anim elit deserunt do enim. Ea commodo culpa dolore ut tempor nostrud non dolor ex officia deserunt ut. Exercitation proident cillum duis cillum ea nisi.' }
 
       ]
+    }
+  },
+  methods: {
+    sortBy (prop) {
+      this.projects.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
     }
   }
 }
