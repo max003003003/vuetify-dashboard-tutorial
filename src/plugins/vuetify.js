@@ -13,8 +13,6 @@ export default new Vuetify({
       light: {
         primary: '#f38cac'
       }
-
     }
   }
-
 })
