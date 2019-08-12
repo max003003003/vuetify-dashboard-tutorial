@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Dashboard from './views/Dashboard'
 import Projects from './views/Projects'
 import Team from './views/Team'
+import Table from './views/Table'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +24,11 @@ export default new Router({
       path: '/team',
       name: 'team',
       component: Team
+    },
+    {
+      path: '/table',
+      name: 'table',
+      component: Table
     }
 
   ]

@@ -17,10 +17,10 @@
         <v-subheader class="white--text">Dashboard</v-subheader>
         <v-list-item v-for="item in links" :key="item.text" route :to="item.route">
             <v-list-item-icon>
-             <v-icon class="white--text">{{ item.icon }}</v-icon>
+                <v-icon class="white--text">{{ item.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-                <v-list-item-title class="white--text">{{ item.text}}</v-list-item-title>
+                <v-list-item-title class="white--text">{{ item.text }}</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -34,7 +34,8 @@ export default {
     links: [
       { icon: 'dashboard', text: 'Dashboard', route: '/' },
       { icon: 'folder', text: 'My Project', route: '/projects' },
-      { icon: 'person', text: 'Team', route: '/team' }
+      { icon: 'person', text: 'Team', route: '/team' },
+      { icon: 'description', text: 'Table', route: '/table' }
     ]
   })
 }
